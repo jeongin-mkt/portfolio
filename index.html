@@ -382,6 +382,21 @@ footer .mail{font-size:16px}
 .cases .lede{font-size:14.5px;color:var(--muted);margin:0 0 18px;line-height:1.7;max-width:52em}
 .case{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;
   box-shadow:var(--shadow);margin-bottom:14px}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 12px}
+@media(max-width:900px){.fgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+.fcol{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 15px;display:flex;flex-direction:column;gap:9px}
+.fstep{display:flex;align-items:baseline;gap:7px;font-size:16px;font-weight:800;letter-spacing:-.01em}
+.fstep .fnum{font-size:12px;color:var(--violet-ink);letter-spacing:.06em}
+.fstep .lev{margin-left:auto;font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:3px 8px;border-radius:999px;background:var(--red-wash);color:var(--red-ink)}
+.fasset{font-size:12.5px;color:var(--violet-ink);background:var(--violet-wash);border-radius:8px;padding:6px 9px;line-height:1.45;font-weight:700}
+.fk{font-size:11px;color:var(--muted);letter-spacing:.04em}
+.fk b{display:block;font-size:13px;color:var(--ink);margin-top:2px;letter-spacing:0}
+.ffix{font-size:12.5px;line-height:1.55;color:var(--ink)}
+.fres{margin-top:auto;padding-top:9px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.fres b{font-size:16px;color:var(--red-ink);margin-left:3px}
+.fres.dim{color:var(--muted);opacity:.65}
+.fnote{font-size:14px;line-height:1.75;color:var(--muted);margin:0 0 18px}
 .frail{display:flex;align-items:stretch;gap:8px;margin:0 0 18px;flex-wrap:wrap}
 .fst{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;opacity:.45}
 .fst.on{opacity:1;border-color:transparent;background:var(--violet-wash)}
@@ -417,18 +432,43 @@ footer .mail{font-size:16px}
 
 <section class="cases">
   <div class="cap"><span class="fn anton">FUNNEL</span><h2>퍼널 개선</h2></div>
-  <p class="lede">구매 전환 퍼널에서 <strong>어느 단계가 막혔는지 지표로 찾고, 원인을 좁혀 바꾼 뒤 다시 잰</strong> 사례입니다.</p>
+  <p class="lede">노출부터 재구매까지 <strong>단계마다 제가 뿌린 소재가 다르고, 보는 지표도 다릅니다.</strong> 어디가 막혔는지 지표로 찾고 소재를 바꿔 다시 잰 과정입니다. 각 단계의 실제 작업물은 아래 <strong>01~04</strong>에 있습니다.</p>
 
-  <div class="frail">
-    <div class="fst on"><div class="fs">유입</div><div class="fn2">특판 전환율</div><div class="fm">+30%</div></div>
-    <div class="farr">&rarr;</div>
-    <div class="fst on"><div class="fs">구매 전환</div><div class="fn2">전환율 &middot; 체류시간 &middot; 매출</div><div class="fm">동반 상승</div></div>
-    <div class="farr">&rarr;</div>
-    <div class="fst"><div class="fs">재구매</div><div class="fn2">CRM 반응률</div><div class="fm">진행 중</div></div>
+  <div class="fgrid">
+    <div class="fcol">
+      <div class="fstep"><span class="fnum anton">01</span>노출<span class="lev">타겟</span></div>
+      <div class="fasset">인플루언서 협업 콘텐츠 &middot; 영상 소재</div>
+      <div class="fk">본 지표<b>도달 대비 특판 전환율</b></div>
+      <div class="ffix">선정 기준을 <strong>팔로워 수 &rarr; 타깃 적합도&middot;참여율</strong>로 재설계</div>
+      <div class="fres">특판 전환율 <b>+30%</b></div>
+    </div>
+    <div class="fcol">
+      <div class="fstep"><span class="fnum anton">02</span>클릭<span class="lev">소재</span></div>
+      <div class="fasset">프로모션 배너 &middot; 기획전 &middot; 타임딜</div>
+      <div class="fk">본 지표<b>채널별 유입 &middot; 월 매출</b></div>
+      <div class="ffix">채널별 <strong>KPI를 분리 추적</strong>하고 채널 성격에 맞는 프로모션을 따로 설계</div>
+      <div class="fres">담당 채널 월 매출 <b>+30%</b></div>
+    </div>
+    <div class="fcol">
+      <div class="fstep"><span class="fnum anton">03</span>구매<span class="lev">랜딩페이지</span></div>
+      <div class="fasset">상세페이지 &middot; 랜딩</div>
+      <div class="fk">본 지표<b>전환율 &middot; 체류시간 &middot; 매출</b></div>
+      <div class="ffix">45p를 <strong>스펙 순서 &rarr; 고객 상황 순서</strong>로 재구성</div>
+      <div class="fres">세 지표 <b>동반 상승</b></div>
+    </div>
+    <div class="fcol">
+      <div class="fstep"><span class="fnum anton">04</span>재구매<span class="lev">메시지</span></div>
+      <div class="fasset">카카오 CRM 메시지</div>
+      <div class="fk">본 지표<b>메시지 반응률</b></div>
+      <div class="ffix"><strong>대상별로 장치를 분리</strong> &mdash; 잠재고객엔 쿠폰, 기존 고객엔 선착순&middot;품절</div>
+      <div class="fres dim">지표 정리 중</div>
+    </div>
   </div>
 
+  <p class="fnote"><strong>빨간 라벨은 그 단계에서 제가 실제로 바꾼 레버</strong>입니다 &mdash; 타겟 &middot; 소재 &middot; 랜딩페이지 &middot; 메시지. 노출에서 사람을 데려오고, 배너로 눌리게 하고, 상세페이지에서 사게 하고, CRM으로 다시 오게 하는 <strong>전 구간을 한 사람이 만들었습니다.</strong> 아래는 그중 <strong>지표가 가장 많이 움직인 두 건</strong>의 상세입니다.</p>
+
   <div class="case">
-    <div class="chead"><span class="tag">유입</span><span class="metric">특판 전환율</span></div>
+    <div class="chead"><span class="tag">01 노출</span><span class="metric">특판 전환율</span></div>
     <h3>도달은 큰데 전환이 없음 &mdash; 선정 기준을 팔로워에서 적합도로</h3>
     <div class="csteps c3">
       <div class="cst"><div class="k">원인</div>
@@ -443,7 +483,7 @@ footer .mail{font-size:16px}
   </div>
 
   <div class="case">
-    <div class="chead"><span class="tag">구매 전환</span><span class="metric">전환율 &middot; 체류시간 &middot; 매출</span></div>
+    <div class="chead"><span class="tag">03 구매</span><span class="metric">전환율 &middot; 체류시간 &middot; 매출</span></div>
     <h3>들어와도 안 삼 &mdash; 45p를 스펙 순서에서 고객 상황 순서로</h3>
     <div class="csteps c3">
       <div class="cst"><div class="k">원인</div>
@@ -457,26 +497,8 @@ footer .mail{font-size:16px}
     <div class="cout"><span class="lbl">전환율 &middot; 체류시간 &middot; 매출</span>
       <span class="ba"><i>구성 개편 전</i> &rarr; <b>동반 상승</b></span></div>
   </div>
-
-  <div class="case own">
-    <div class="chead"><span class="tag own">개인 채널</span><span class="metric">시청 지속률 &mdash; 같은 방식을 0에서 검증</span></div>
-    <h3>조회율이 52.5%에서 정체 &mdash; 길이를 줄여 82.9%</h3>
-    <div class="csteps c3">
-      <div class="cst"><div class="k">원인</div>
-        <p>105편을 <strong>길이 구간으로 나누니 길수록 조회율이 떨어졌습니다.</strong></p>
-        <div class="fig">60~75초 56.0% / 75~90초 51.8% / 90초+ 43.7% · 평균 78초</div></div>
-      <div class="cst"><div class="k">개선</div>
-        <p>2채널을 <strong>평균 52초</strong>로 설계해 새로 열었습니다.</p></div>
-      <div class="cst"><div class="k">결과</div>
-        <p>조회율이 오르자 <strong>구독 전환까지 같이 올랐습니다.</strong></p></div>
-    </div>
-    <div class="cout">
-      <span class="lbl">평균 조회율</span><span class="ba">52.5% <i>&rarr;</i> <b>82.9%</b></span>
-      <span class="lbl">1,000뷰당 구독</span><span class="ba">1.65 <i>&rarr;</i> <b>2.80</b></span>
-      <span class="lbl">참여율</span><span class="ba">1.18% <i>&rarr;</i> <b>1.85%</b></span>
-    </div>
-  </div>
 </section>
+
 
 
 
