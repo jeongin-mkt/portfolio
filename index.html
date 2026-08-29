@@ -367,6 +367,79 @@ footer .mail{font-size:16px}
   <p class="rnote">아래 <strong>01~04</strong>는 위 성과를 만든 <strong>실제 작업물</strong>이고, <strong>05</strong>는 같은 방식을 개인 채널에 적용해 <strong>0에서 만든 결과</strong>입니다.</p>
 </section>
 
+<style>
+.cases{margin:30px 0 4px}
+.cases .cap{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.cases .cap .fn{font-size:13px;letter-spacing:.22em;color:var(--violet-ink)}
+.cases .cap h2{font-size:clamp(22px,3vw,28px);margin:0;font-weight:800;letter-spacing:-.01em}
+.cases .lede{font-size:14.5px;color:var(--muted);margin:0 0 18px;line-height:1.7;max-width:52em}
+.case{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;
+  box-shadow:var(--shadow);margin-bottom:14px}
+.case .tag{display:inline-block;font-size:11px;letter-spacing:.1em;font-weight:700;
+  padding:4px 10px;border-radius:999px;background:var(--violet-wash);color:var(--violet-ink)}
+.case h3{font-size:17.5px;margin:11px 0 15px;font-weight:800;letter-spacing:-.01em;line-height:1.35}
+.csteps{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+@media(max-width:820px){.csteps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.csteps{grid-template-columns:1fr}}
+.cst{background:var(--bg);border-radius:11px;padding:12px 13px}
+.cst .k{font-size:10.5px;letter-spacing:.1em;color:var(--violet-ink);font-weight:700}
+.cst p{margin:6px 0 0;font-size:13px;line-height:1.6}
+.cst .fig{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5;font-variant-numeric:tabular-nums}
+.cout{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px;padding-top:13px;
+  border-top:1px solid var(--line)}
+.cout .ba{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-variant-numeric:tabular-nums}
+.cout .ba i{font-style:normal;color:var(--muted)}
+.cout .ba b{font-size:17px;color:var(--violet-ink)}
+.cout .lbl{font-size:12.5px;color:var(--muted)}
+</style>
+
+<section class="cases">
+  <div class="cap"><span class="fn anton">CASES</span><h2>문제를 어떻게 풀었나</h2></div>
+  <p class="lede">지표가 안 오를 때 <strong>무엇이 원인인지 가설을 세우고, 나눠서 확인하고, 바꿔서 다시 잰</strong> 기록입니다. 퍼널에서 손댄 지점이 서로 다릅니다.</p>
+
+  <div class="case">
+    <span class="tag">타겟</span>
+    <h3>팔로워 수로 뽑던 인플루언서를, 타깃 적합도와 참여율로 다시 뽑았습니다</h3>
+    <div class="csteps">
+      <div class="cst"><div class="k">1 · 문제</div>
+        <p>팔로워가 많은 계정을 섭외해도 <strong>특판 전환이 따라오지 않았습니다.</strong></p>
+        <div class="fig">선정 기준 = 팔로워 수</div></div>
+      <div class="cst"><div class="k">2 · 가설</div>
+        <p>도달 규모가 아니라 <strong>우리 상품을 살 사람이 보고 있는지</strong>가 전환을 만든다.</p></div>
+      <div class="cst"><div class="k">3 · 실행</div>
+        <p>선정 기준을 <strong>타깃 적합도 · 참여율</strong> 중심으로 재설계하고, 섭외 · 계약 · 콘텐츠 방향까지 직접 운영했습니다.</p></div>
+      <div class="cst"><div class="k">4 · 결과</div>
+        <p>같은 예산에서 <strong>특판 전환율이 올랐습니다.</strong></p>
+        <div class="fig">팔로워 수 기준 → 적합도 기준</div></div>
+    </div>
+    <div class="cout"><span class="lbl">특판 전환율</span>
+      <span class="ba"><i>기준 변경 전</i> → <b>+30%</b></span></div>
+  </div>
+
+  <div class="case">
+    <span class="tag">콘텐츠 길이</span>
+    <h3>영상 길이가 원인이라는 가설을 세우고, 다음 채널을 그 길이로 설계했습니다</h3>
+    <div class="csteps">
+      <div class="cst"><div class="k">1 · 문제</div>
+        <p>1채널 105편의 <strong>평균 조회율이 52.5%에서 더 안 올랐습니다.</strong></p>
+        <div class="fig">평균 길이 78초</div></div>
+      <div class="cst"><div class="k">2 · 가설</div>
+        <p>주제나 썸네일이 아니라 <strong>길이가 시청 지속률을 떨어뜨린다.</strong></p></div>
+      <div class="cst"><div class="k">3 · 검증</div>
+        <p>105편을 길이 구간으로 나눠 조회율을 비교했더니 <strong>반비례</strong>했습니다.</p>
+        <div class="fig">60~75초 56.0% / 75~90초 51.8% / 90초+ 43.7%</div></div>
+      <div class="cst"><div class="k">4 · 적용</div>
+        <p>2채널을 <strong>평균 52초</strong>로 설계해 새로 열었습니다.</p>
+        <div class="fig">2026-06-20 개설 · 19편</div></div>
+    </div>
+    <div class="cout">
+      <span class="lbl">평균 조회율</span><span class="ba">52.5% <i>→</i> <b>82.9%</b></span>
+      <span class="lbl">1,000뷰당 구독</span><span class="ba">1.65 <i>→</i> <b>2.80</b></span>
+      <span class="lbl">참여율</span><span class="ba">1.18% <i>→</i> <b>1.85%</b></span>
+    </div>
+  </div>
+</section>
+
 <section id="reach">
   <div class="shead">
     <div class="step"><span class="no anton">01</span><span class="fn anton r">REACH</span></div>
@@ -499,27 +572,6 @@ footer .mail{font-size:16px}
 .expout{margin:14px 0 0;font-size:14px;line-height:1.7}
 .expout b{color:var(--violet-ink)}
 </style>
-
-<div class="exp">
-  <div class="fn anton">EXPERIMENT</div>
-  <h3>영상 길이 가설 &mdash; 세우고, 나눠 보고, 다음 채널에 적용했습니다</h3>
-  <div class="esteps">
-    <div class="est"><div class="k">1 &middot; 관찰</div>
-      <p>1채널 105편의 평균 조회율이 52.5%에서 더 안 올랐습니다.</p>
-      <div class="fig">평균 길이 78초</div></div>
-    <div class="est"><div class="k">2 &middot; 가설</div>
-      <p>길이가 시청 지속률을 떨어뜨리는 것 아닐까.</p>
-      <div class="fig">주제&middot;썸네일이 아니라 길이 변수</div></div>
-    <div class="est"><div class="k">3 &middot; 검증</div>
-      <p>105편을 길이 구간으로 나눠 조회율을 비교했더니 <strong>반비례</strong>했습니다.</p>
-      <div class="fig">60~75초 56.0% / 75~90초 51.8% / 90초+ 43.7%</div></div>
-    <div class="est"><div class="k">4 &middot; 적용</div>
-      <p>2채널을 <strong>평균 52초</strong>로 설계해 새로 열었습니다.</p>
-      <div class="fig">개설 2026-06-20 &middot; 19편</div></div>
-  </div>
-  <p class="expout">결과 &mdash; 평균 조회율 <b>52.5% &rarr; 82.9%</b> &middot; 1,000뷰당 구독 <b>1.65 &rarr; 2.80</b> &middot; 참여율 <b>1.18% &rarr; 1.85%</b>.
-  같은 소재·같은 제작 방식에서 <strong>길이 하나만 바꾼 결과</strong>입니다.</p>
-</div>
 
 <div class="chcmp">
     <h3>채널 A/B &mdash; 첫 채널에서 찾은 규칙을 두 번째 채널에 적용</h3>
