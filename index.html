@@ -220,6 +220,14 @@ section{padding:64px 0 8px}
 figure{margin:0}
 
 /* ---------- CRM ---------- */
+.cmeta{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 6px}
+.cmeta span{font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:3px 8px;border-radius:999px;line-height:1.3}
+.cmeta .aud.p{background:var(--red-wash);color:var(--red-ink)}
+.cmeta .aud.e{background:var(--violet-wash);color:var(--violet-ink)}
+.cmeta .aud.a{background:var(--chip);color:var(--muted)}
+.cmeta .goal{background:transparent;color:var(--muted);border:1px solid var(--line);font-weight:500}
+.audkey{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 0;font-size:12.5px;color:var(--muted);align-items:center}
+.audkey i{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:-1px}
 .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px}
 .ccard{border:0;padding:0;background:none;cursor:zoom-in;text-align:left}
 .ccard .frame{
@@ -385,6 +393,8 @@ footer .mail{font-size:16px}
 .chead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .case .metric{font-size:12.5px;color:var(--muted)}
 .case .metric b{color:var(--ink);font-weight:700}
+.case.own{border-style:dashed}
+.case .tag.own{background:var(--chip);color:var(--muted)}
 .case .tag{display:inline-block;font-size:11px;letter-spacing:.1em;font-weight:700;
   padding:4px 10px;border-radius:999px;background:var(--violet-wash);color:var(--violet-ink)}
 .case h3{font-size:17.5px;margin:11px 0 15px;font-weight:800;letter-spacing:-.01em;line-height:1.35}
@@ -410,32 +420,11 @@ footer .mail{font-size:16px}
   <p class="lede">구매 전환 퍼널에서 <strong>어느 단계가 막혔는지 지표로 찾고, 원인을 좁혀 바꾼 뒤 다시 잰</strong> 사례입니다.</p>
 
   <div class="frail">
-    <div class="fst on"><div class="fs">노출</div><div class="fn2">시청 지속률</div><div class="fm">52.5% &rarr; 82.9%</div></div>
-    <div class="farr">&rarr;</div>
     <div class="fst on"><div class="fs">유입</div><div class="fn2">특판 전환율</div><div class="fm">+30%</div></div>
     <div class="farr">&rarr;</div>
-    <div class="fst on"><div class="fs">구매 전환</div><div class="fn2">전환율 &middot; 체류시간</div><div class="fm">동반 상승</div></div>
+    <div class="fst on"><div class="fs">구매 전환</div><div class="fn2">전환율 &middot; 체류시간 &middot; 매출</div><div class="fm">동반 상승</div></div>
     <div class="farr">&rarr;</div>
     <div class="fst"><div class="fs">재구매</div><div class="fn2">CRM 반응률</div><div class="fm">진행 중</div></div>
-  </div>
-
-  <div class="case">
-    <div class="chead"><span class="tag">노출</span><span class="metric">시청 지속률</span></div>
-    <h3>조회율이 52.5%에서 정체 &mdash; 길이를 줄여 82.9%</h3>
-    <div class="csteps c3">
-      <div class="cst"><div class="k">원인</div>
-        <p>105편을 <strong>길이 구간으로 나누니 길수록 조회율이 떨어졌습니다.</strong></p>
-        <div class="fig">60~75초 56.0% / 75~90초 51.8% / 90초+ 43.7% · 평균 78초</div></div>
-      <div class="cst"><div class="k">개선</div>
-        <p>2채널을 <strong>평균 52초</strong>로 설계해 새로 열었습니다.</p></div>
-      <div class="cst"><div class="k">결과</div>
-        <p>조회율이 오르자 <strong>구독 전환까지 같이 올랐습니다.</strong></p></div>
-    </div>
-    <div class="cout">
-      <span class="lbl">평균 조회율</span><span class="ba">52.5% <i>&rarr;</i> <b>82.9%</b></span>
-      <span class="lbl">1,000뷰당 구독</span><span class="ba">1.65 <i>&rarr;</i> <b>2.80</b></span>
-      <span class="lbl">참여율</span><span class="ba">1.18% <i>&rarr;</i> <b>1.85%</b></span>
-    </div>
   </div>
 
   <div class="case">
@@ -468,7 +457,27 @@ footer .mail{font-size:16px}
     <div class="cout"><span class="lbl">전환율 &middot; 체류시간 &middot; 매출</span>
       <span class="ba"><i>구성 개편 전</i> &rarr; <b>동반 상승</b></span></div>
   </div>
+
+  <div class="case own">
+    <div class="chead"><span class="tag own">개인 채널</span><span class="metric">시청 지속률 &mdash; 같은 방식을 0에서 검증</span></div>
+    <h3>조회율이 52.5%에서 정체 &mdash; 길이를 줄여 82.9%</h3>
+    <div class="csteps c3">
+      <div class="cst"><div class="k">원인</div>
+        <p>105편을 <strong>길이 구간으로 나누니 길수록 조회율이 떨어졌습니다.</strong></p>
+        <div class="fig">60~75초 56.0% / 75~90초 51.8% / 90초+ 43.7% · 평균 78초</div></div>
+      <div class="cst"><div class="k">개선</div>
+        <p>2채널을 <strong>평균 52초</strong>로 설계해 새로 열었습니다.</p></div>
+      <div class="cst"><div class="k">결과</div>
+        <p>조회율이 오르자 <strong>구독 전환까지 같이 올랐습니다.</strong></p></div>
+    </div>
+    <div class="cout">
+      <span class="lbl">평균 조회율</span><span class="ba">52.5% <i>&rarr;</i> <b>82.9%</b></span>
+      <span class="lbl">1,000뷰당 구독</span><span class="ba">1.65 <i>&rarr;</i> <b>2.80</b></span>
+      <span class="lbl">참여율</span><span class="ba">1.18% <i>&rarr;</i> <b>1.85%</b></span>
+    </div>
+  </div>
 </section>
+
 
 
 
@@ -507,10 +516,11 @@ footer .mail{font-size:16px}
   <div class="shead">
     <div class="step"><span class="no anton">04</span><span class="fn anton r">RETENTION</span></div>
     <h2>카카오 CRM 메시지 <span class="count" id="ccount"></span></h2>
-    <p>카카오톡 채널 구독자 대상 재구매 메시지 기획. 선착순·시간 한정·가격 앵커링·라이브 연동 등 반응을 끌어내는 장치를 목적에 맞게 설계했습니다.</p>
+    <p>카카오톡 채널 구독자 대상 재구매 메시지 기획. <strong>보내는 대상과 목적이 다르면 장치도 달라야 합니다.</strong> 잠재고객에게는 쿠폰으로 첫 구매 문턱을 낮추고, 기존 구매고객에게는 선착순·품절 소구로 재구매를 당깁니다. 각 메시지에 <strong>대상과 목적</strong>을 표시했습니다.</p>
   </div>
   <div class="res"><b>RESULT</b><div>선착순&middot;시간 한정&middot;가격 앵커링&middot;라이브 연동을 <strong>메시지 목적별로 나눠</strong> 설계했습니다. 신규 유입이 아니라 <strong>이미 산 사람을 다시 오게 하는</strong> 구간입니다.</div></div>
   <div class="cgrid" id="cgrid"></div>
+  <p class="audkey"><span><i style="background:var(--red)"></i>잠재고객 &mdash; 구독했지만 아직 안 산 사람</span><span><i style="background:var(--violet)"></i>기존 구매고객 &mdash; 이미 산 사람</span><span><i style="background:var(--muted)"></i>전체 구독자</span></p>
 </section>
 
 <section id="data">
@@ -700,11 +710,16 @@ const BMETA = {
 const BORDER = ["banner_00","banner_02","banner_05","banner_03","banner_04","banner_07","banner_01","banner_06"];
 
 const CMETA = {
-  Kakao_CRM_00:{t:"주말 간식 특가 캐러셀", d:"선착순 쿠폰 오프닝 + 상품 3종 구성"},
-  Kakao_CRM_01:{t:"마진포기 할인 EVENT", d:"3일 한정 + 1,000원 쿠폰 첨부형"},
-  Kakao_CRM_02:{t:"리빙용품 주말특가", d:"가격 앵커링(99,000→25,900) 소구"},
-  Kakao_CRM_03:{t:"라이브 연동 1시간 특가", d:"'방송중 구매하기' 버튼 연동 메시지"},
-  Kakao_CRM_04:{t:"1+2 프로모션 텍스트", d:"품절 주의 · 선착순 100개 한정 소구"},
+  Kakao_CRM_00:{t:"주말 간식 특가 캐러셀", d:"선착순 쿠폰 오프닝 + 상품 3종 구성",
+    aud:"전체 구독자", goal:"주말 매출 집중"},
+  Kakao_CRM_01:{t:"마진포기 할인 EVENT", d:"3일 한정 + 1,000원 쿠폰 첨부형",
+    aud:"잠재고객", goal:"첫 구매 전환"},
+  Kakao_CRM_02:{t:"리빙용품 주말특가", d:"가격 앵커링(99,000→25,900) 소구",
+    aud:"잠재고객", goal:"신규 카테고리 진입"},
+  Kakao_CRM_03:{t:"라이브 연동 1시간 특가", d:"'방송중 구매하기' 버튼 연동 메시지",
+    aud:"전체 구독자", goal:"라이브 유입"},
+  Kakao_CRM_04:{t:"1+2 프로모션 텍스트", d:"품절 주의 · 선착순 100개 한정 소구",
+    aud:"기존 구매고객", goal:"재구매 · 객단가"},
 };
 
 const $ = (s)=>document.querySelector(s);
@@ -803,7 +818,7 @@ Object.keys(CMETA).forEach(key=>{
   const m = CMETA[key];
   const btn = document.createElement("button");
   btn.type = "button"; btn.className = "ccard";
-  btn.innerHTML = `<figure><div class="frame"><img src="${c.img}" alt="${m.t}" loading="lazy"></div><figcaption><b>${m.t}</b>${m.d}</figcaption></figure>`;
+  btn.innerHTML = `<figure><div class="frame"><img src="${c.img}" alt="${m.t}" loading="lazy"></div><figcaption><div class="cmeta"><span class="aud ${m.aud==="잠재고객"?"p":(m.aud==="기존 구매고객"?"e":"a")}">${m.aud}</span><span class="goal">${m.goal}</span></div><b>${m.t}</b>${m.d}</figcaption></figure>`;
   btn.addEventListener("click", ()=>openLb(c.img, m.t + " — " + m.d));
   cgrid.appendChild(btn);
 });
