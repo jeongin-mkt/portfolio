@@ -375,6 +375,17 @@ footer .mail{font-size:16px}
 .cases .lede{font-size:14.5px;color:var(--muted);margin:0 0 18px;line-height:1.7;max-width:52em}
 .case{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;
   box-shadow:var(--shadow);margin-bottom:14px}
+.frail{display:flex;align-items:stretch;gap:8px;margin:0 0 18px;flex-wrap:wrap}
+.fst{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;opacity:.45}
+.fst.on{opacity:1;border-color:transparent;background:var(--violet-wash)}
+.fst .fs{font-size:10.5px;letter-spacing:.09em;font-weight:700;color:var(--violet-ink)}
+.fst .fn2{font-size:15px;font-weight:800;margin-top:3px;letter-spacing:-.01em}
+.fst .fm{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+.farr{align-self:center;color:var(--muted);font-size:15px;flex:none}
+@media(max-width:700px){.farr{display:none}.fst{flex:1 1 45%}}
+.chead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.case .metric{font-size:12.5px;color:var(--muted)}
+.case .metric b{color:var(--ink);font-weight:700}
 .case .tag{display:inline-block;font-size:11px;letter-spacing:.1em;font-weight:700;
   padding:4px 10px;border-radius:999px;background:var(--violet-wash);color:var(--violet-ink)}
 .case h3{font-size:17.5px;margin:11px 0 15px;font-weight:800;letter-spacing:-.01em;line-height:1.35}
@@ -394,58 +405,29 @@ footer .mail{font-size:16px}
 </style>
 
 <section class="cases">
-  <div class="cap"><span class="fn anton">CASES</span><h2>문제를 어떻게 풀었나</h2></div>
-  <p class="lede">지표가 안 오를 때 <strong>무엇이 원인인지 가설을 세우고, 나눠서 확인하고, 바꿔서 다시 잰</strong> 기록입니다. 퍼널에서 손댄 지점이 서로 다릅니다.</p>
+  <div class="cap"><span class="fn anton">CASE STUDIES</span><h2>지표를 분석해 성과를 개선한 사례</h2></div>
+  <p class="lede">퍼널 단계마다 <strong>보는 지표가 다릅니다.</strong> 어느 단계에서 무엇이 막혔는지 지표로 찾고, 가설을 세워 바꾼 뒤 다시 잰 기록입니다. 아래 <strong>01~04</strong>는 각 단계에서 만든 작업물입니다.</p>
 
-  <div class="case">
-    <span class="tag">랜딩페이지</span>
-    <h3>제품 설명서였던 45p를, 고객이 겪는 상황에서 시작하도록 다시 짰습니다</h3>
-    <div class="csteps">
-      <div class="cst"><div class="k">1 · 문제</div>
-        <p><strong>제품 위주의 설명</strong>이었습니다. 기능과 스펙을 위에서부터 나열했고, <strong>고객이 왜 이걸 찾는지는 페이지에 없었습니다.</strong></p>
-        <div class="fig">펫키지 펫 드라이룸 · 45p</div></div>
-      <div class="cst"><div class="k">2 · 가설</div>
-        <p>이 제품을 검색하는 사람은 스펙이 궁금한 게 아니라 <strong>목욕 후 털 말리기가 힘든 사람</strong>이다. 그 장면에서 시작해야 읽힌다.</p></div>
-      <div class="cst"><div class="k">3 · 실행</div>
-        <p>45p 전체를 <strong>페인포인트 오프닝 → 사용 장면 설득 → 신뢰 소구</strong> 순서로 재구성하고, <strong>스펙은 설득 뒤로</strong> 내렸습니다.</p>
-        <div class="fig">‘목욕 후 전쟁’ 오프닝</div></div>
-      <div class="cst"><div class="k">4 · 결과</div>
-        <p>같은 상품·같은 가격에서 <strong>전환율 · 체류시간 · 매출이 함께 올랐습니다.</strong></p>
-        <div class="fig">구성만 바꾼 결과</div></div>
-    </div>
-    <div class="cout"><span class="lbl">전환율 · 체류시간 · 매출</span>
-      <span class="ba"><i>구성 개편 전</i> → <b>동반 상승</b></span></div>
+  <div class="frail">
+    <div class="fst on"><div class="fs">01 REACH</div><div class="fn2">도달</div><div class="fm">시청 지속률</div></div>
+    <div class="farr">&rarr;</div>
+    <div class="fst on"><div class="fs">02 ACQUISITION</div><div class="fn2">유입</div><div class="fm">특판 전환율</div></div>
+    <div class="farr">&rarr;</div>
+    <div class="fst on"><div class="fs">03 CONVERSION</div><div class="fn2">전환</div><div class="fm">전환율 &middot; 체류시간</div></div>
+    <div class="farr">&rarr;</div>
+    <div class="fst"><div class="fs">04 RETENTION</div><div class="fn2">재구매</div><div class="fm">CRM 반응률</div></div>
   </div>
 
   <div class="case">
-    <span class="tag">타겟</span>
-    <h3>팔로워 수로 뽑던 인플루언서를, 타깃 적합도와 참여율로 다시 뽑았습니다</h3>
+    <div class="chead"><span class="tag">01 REACH &middot; 도달</span><span class="metric">본 지표 &mdash; <b>평균 조회율(시청 지속률)</b></span></div>
+    <h3>조회율이 52.5%에서 멈췄습니다. 길이를 원인으로 보고 다음 채널을 다시 설계했습니다</h3>
     <div class="csteps">
-      <div class="cst"><div class="k">1 · 문제</div>
-        <p>팔로워가 많은 계정을 섭외해도 <strong>특판 전환이 따라오지 않았습니다.</strong></p>
-        <div class="fig">선정 기준 = 팔로워 수</div></div>
-      <div class="cst"><div class="k">2 · 가설</div>
-        <p>도달 규모가 아니라 <strong>우리 상품을 살 사람이 보고 있는지</strong>가 전환을 만든다.</p></div>
-      <div class="cst"><div class="k">3 · 실행</div>
-        <p>선정 기준을 <strong>타깃 적합도 · 참여율</strong> 중심으로 재설계하고, 섭외 · 계약 · 콘텐츠 방향까지 직접 운영했습니다.</p></div>
-      <div class="cst"><div class="k">4 · 결과</div>
-        <p>같은 예산에서 <strong>특판 전환율이 올랐습니다.</strong></p>
-        <div class="fig">팔로워 수 기준 → 적합도 기준</div></div>
-    </div>
-    <div class="cout"><span class="lbl">특판 전환율</span>
-      <span class="ba"><i>기준 변경 전</i> → <b>+30%</b></span></div>
-  </div>
-
-  <div class="case">
-    <span class="tag">콘텐츠 길이</span>
-    <h3>영상 길이가 원인이라는 가설을 세우고, 다음 채널을 그 길이로 설계했습니다</h3>
-    <div class="csteps">
-      <div class="cst"><div class="k">1 · 문제</div>
+      <div class="cst"><div class="k">1 · 지표 확인</div>
         <p>1채널 105편의 <strong>평균 조회율이 52.5%에서 더 안 올랐습니다.</strong></p>
         <div class="fig">평균 길이 78초</div></div>
       <div class="cst"><div class="k">2 · 가설</div>
         <p>주제나 썸네일이 아니라 <strong>길이가 시청 지속률을 떨어뜨린다.</strong></p></div>
-      <div class="cst"><div class="k">3 · 검증</div>
+      <div class="cst"><div class="k">3 · 분석</div>
         <p>105편을 길이 구간으로 나눠 조회율을 비교했더니 <strong>반비례</strong>했습니다.</p>
         <div class="fig">60~75초 56.0% / 75~90초 51.8% / 90초+ 43.7%</div></div>
       <div class="cst"><div class="k">4 · 적용</div>
@@ -453,12 +435,52 @@ footer .mail{font-size:16px}
         <div class="fig">2026-06-20 개설 · 19편</div></div>
     </div>
     <div class="cout">
-      <span class="lbl">평균 조회율</span><span class="ba">52.5% <i>→</i> <b>82.9%</b></span>
-      <span class="lbl">1,000뷰당 구독</span><span class="ba">1.65 <i>→</i> <b>2.80</b></span>
-      <span class="lbl">참여율</span><span class="ba">1.18% <i>→</i> <b>1.85%</b></span>
+      <span class="lbl">평균 조회율</span><span class="ba">52.5% <i>&rarr;</i> <b>82.9%</b></span>
+      <span class="lbl">1,000뷰당 구독</span><span class="ba">1.65 <i>&rarr;</i> <b>2.80</b></span>
+      <span class="lbl">참여율</span><span class="ba">1.18% <i>&rarr;</i> <b>1.85%</b></span>
     </div>
   </div>
+
+  <div class="case">
+    <div class="chead"><span class="tag">02 ACQUISITION &middot; 유입</span><span class="metric">본 지표 &mdash; <b>특판 전환율</b></span></div>
+    <h3>도달은 큰데 전환이 없었습니다. 인플루언서 선정 기준을 바꿨습니다</h3>
+    <div class="csteps">
+      <div class="cst"><div class="k">1 · 지표 확인</div>
+        <p>팔로워가 많은 계정을 섭외해도 <strong>특판 전환이 따라오지 않았습니다.</strong></p>
+        <div class="fig">선정 기준 = 팔로워 수</div></div>
+      <div class="cst"><div class="k">2 · 가설</div>
+        <p>도달 규모가 아니라 <strong>우리 상품을 살 사람이 보고 있는지</strong>가 전환을 만든다.</p></div>
+      <div class="cst"><div class="k">3 · 실행</div>
+        <p>선정 기준을 <strong>타깃 적합도 &middot; 참여율</strong> 중심으로 재설계하고, 섭외 &middot; 계약 &middot; 콘텐츠 방향까지 직접 운영했습니다.</p></div>
+      <div class="cst"><div class="k">4 · 결과</div>
+        <p><strong>같은 예산에서</strong> 특판 전환율이 올랐습니다.</p>
+        <div class="fig">팔로워 수 기준 → 적합도 기준</div></div>
+    </div>
+    <div class="cout"><span class="lbl">특판 전환율</span>
+      <span class="ba"><i>기준 변경 전</i> &rarr; <b>+30%</b></span></div>
+  </div>
+
+  <div class="case">
+    <div class="chead"><span class="tag">03 CONVERSION &middot; 전환</span><span class="metric">본 지표 &mdash; <b>전환율 &middot; 체류시간 &middot; 매출</b></span></div>
+    <h3>들어와도 안 샀습니다. 제품 설명서였던 45p를 고객이 겪는 상황에서 시작하도록 다시 짰습니다</h3>
+    <div class="csteps">
+      <div class="cst"><div class="k">1 · 지표 확인</div>
+        <p><strong>제품 위주의 설명</strong>이었습니다. 스펙을 위에서부터 나열했고, <strong>고객이 왜 이걸 찾는지는 페이지에 없었습니다.</strong></p>
+        <div class="fig">펫키지 펫 드라이룸 · 45p</div></div>
+      <div class="cst"><div class="k">2 · 가설</div>
+        <p>이 제품을 검색하는 사람은 스펙이 궁금한 게 아니라 <strong>목욕 후 털 말리기가 힘든 사람</strong>이다.</p></div>
+      <div class="cst"><div class="k">3 · 실행</div>
+        <p>45p 전체를 <strong>페인포인트 오프닝 &rarr; 사용 장면 설득 &rarr; 신뢰 소구</strong> 순서로 재구성하고, <strong>스펙은 설득 뒤로</strong> 내렸습니다.</p>
+        <div class="fig">‘목욕 후 전쟁’ 오프닝</div></div>
+      <div class="cst"><div class="k">4 · 결과</div>
+        <p><strong>같은 상품 &middot; 같은 가격</strong>에서 세 지표가 함께 올랐습니다.</p>
+        <div class="fig">구성만 바꾼 결과</div></div>
+    </div>
+    <div class="cout"><span class="lbl">전환율 &middot; 체류시간 &middot; 매출</span>
+      <span class="ba"><i>구성 개편 전</i> &rarr; <b>동반 상승</b></span></div>
+  </div>
 </section>
+
 
 <section id="reach">
   <div class="shead">
