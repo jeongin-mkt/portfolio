@@ -664,7 +664,57 @@ footer .mail{font-size:16px}
     <a href="https://jeongin-mkt.github.io/" target="_blank" rel="noopener">AI 파이프라인 상세 &#8599;</a>
     <a class="alt" href="https://jeongin-mkt.github.io/content-output/" target="_blank" rel="noopener">채널 성과 리포트 전체 &#8599;</a>
   </div>
-  <div class="kgrid">
+<div class="pipe">
+    <div class="fn anton">HOW &mdash; AI CONTENT PIPELINE</div>
+    <p>Claude Code &middot; API 연동으로 구축한 자동화 파이프라인이 아이디어 발굴부터 예약 업로드까지 처리합니다. 사람은 기획 판단과 품질 검수에만 집중해, 1인 운영으로 격일 발행을 유지했습니다.</p>
+    <svg class="pipesvg" viewBox="0 0 900 320" role="img" aria-labelledby="pt pd">
+      <title id="pt">AI 에이전트 파이프라인 구조도</title>
+      <desc id="pd">검색 수요를 입력받아 에이전트가 주제 선정, 스크립트 작성, 나레이션과 자막, 이미지와 영상 생성, 렌더링과 조립, 예약 발행 여섯 단계를 처리한 뒤 유튜브·틱톡·인스타그램에 발행하고, 성과를 수집해 다음 주제 선정에 반영합니다. 사람은 주제 판단과 최종 검수를 맡습니다.</desc>
+
+      <rect class="bxh" x="128" y="0" width="172" height="26" rx="13"/>
+      <text class="kh" x="214" y="17" text-anchor="middle">사람 · 주제 판단</text>
+      <path class="lnd" d="M214 26 V 58"/>
+
+      <rect class="bxh" x="600" y="0" width="172" height="26" rx="13"/>
+      <text class="kh" x="686" y="17" text-anchor="middle">사람 · 최종 검수</text>
+      <path class="lnd" d="M686 26 V 58"/>
+
+      <rect class="bx" x="0" y="58" width="130" height="152" rx="12"/>
+      <text class="t" x="65" y="126" text-anchor="middle">검색 수요</text>
+      <text class="s" x="65" y="148" text-anchor="middle">네이버 API</text>
+      <path class="ln" d="M136 134 H 162"/><path class="ar" d="M162 128 l12 6 -12 6 z"/>
+
+      <rect class="bxa" x="182" y="58" width="516" height="152" rx="12"/>
+      <text class="k" x="196" y="78">AI 에이전트 &mdash; 6단계</text>
+      <rect class="bx" x="196" y="88" width="240" height="28" rx="7"/>
+      <text class="c" x="208" y="106">1 주제 선정<tspan class="cm" dx="8">검색 수요 반영</tspan></text>
+      <rect class="bx" x="444" y="88" width="240" height="28" rx="7"/>
+      <text class="c" x="456" y="106">2 스크립트 작성<tspan class="cm" dx="8">Claude API</tspan></text>
+      <rect class="bx" x="196" y="122" width="240" height="28" rx="7"/>
+      <text class="c" x="208" y="140">3 나레이션 · 자막<tspan class="cm" dx="8">ElevenLabs</tspan></text>
+      <rect class="bx" x="444" y="122" width="240" height="28" rx="7"/>
+      <text class="c" x="456" y="140">4 이미지 · 영상<tspan class="cm" dx="8">생성 모델 API</tspan></text>
+      <rect class="bx" x="196" y="156" width="240" height="28" rx="7"/>
+      <text class="c" x="208" y="174">5 렌더링 · 조립<tspan class="cm" dx="8">FFmpeg</tspan></text>
+      <rect class="bx" x="444" y="156" width="240" height="28" rx="7"/>
+      <text class="c" x="456" y="174">6 예약 발행<tspan class="cm" dx="8">플랫폼 API</tspan></text>
+
+      <path class="ln" d="M704 134 H 730"/><path class="ar" d="M730 128 l12 6 -12 6 z"/>
+      <rect class="bx" x="750" y="58" width="150" height="152" rx="12"/>
+      <text class="t" x="825" y="126" text-anchor="middle">자동 발행</text>
+      <text class="s" x="825" y="148" text-anchor="middle">유튜브 · 틱톡 · 인스타</text>
+
+      <path class="ln" d="M825 210 V 244 Q 825 256 813 256 H 77 Q 65 256 65 244 V 222"/>
+      <path class="ar" d="M59 222 l6 -12 6 12 z"/>
+      <rect class="bxs" x="330" y="244" width="240" height="24" rx="12"/>
+      <text class="s" x="450" y="260" text-anchor="middle">성과 수집 &rarr; 다음 주제에 반영</text>
+
+      <text class="s" x="450" y="296" text-anchor="middle">단계마다 상태를 기록해 멈춘 지점부터 다시 실행합니다</text>
+      <text class="s" x="450" y="316" text-anchor="middle">사람이 하는 건 어떤 주제를 버릴지 정하는 것과 최종 검수뿐입니다</text>
+    </svg>
+    <p class="datafoot">에이전트 구성과 운영 방식은 위 <strong>AI 파이프라인 상세</strong>에 정리했습니다.</p>
+  </div>
+    <div class="kgrid">
     <div class="kpi hot"><div class="num anton">124<em>편</em></div><div class="lab">발행 콘텐츠</div></div>
     <div class="kpi"><div class="num anton">122,514</div><div class="lab">누적 조회수</div></div>
     <div class="kpi"><div class="num anton">55.9<em>%</em></div><div class="lab">평균 조회율 (시청 지속)</div></div>
@@ -720,54 +770,6 @@ footer .mail{font-size:16px}
     <p class="note">편당 조회수는 1채널 1,030회, 2채널 732회입니다. 2채널은 개설 5주차라 노출이 1,158회로 1채널(12,757회)의 9% 수준이었고, 같은 노출을 받았을 때의 전환 효율이 개선된 결과입니다.</p>
   </div>
   <p class="datafoot">콘텐츠별 퍼널 지표(노출&rarr;클릭&rarr;조회&rarr;시청유지&rarr;참여&rarr;구독 전환)와 전체 원본 데이터는 위 <strong>채널 성과 리포트</strong>에서 확인할 수 있습니다. 인스타그램 릴스 &middot; 틱톡 운영 데이터 포함.</p>
-  <div class="pipe">
-    <div class="fn anton">HOW &mdash; AI CONTENT PIPELINE</div>
-    <p>Claude Code &middot; API 연동으로 구축한 자동화 파이프라인이 아이디어 발굴부터 예약 업로드까지 처리합니다. 사람은 기획 판단과 품질 검수에만 집중해, 1인 운영으로 격일 발행을 유지했습니다.</p>
-    <svg class="pipesvg" viewBox="0 0 900 300" role="img" aria-labelledby="pt pd">
-      <title id="pt">AI 에이전트 파이프라인 구조도</title>
-      <desc id="pd">검색 수요 데이터를 입력받아 AI 에이전트가 주제·대본, 나레이션·자막, 이미지·영상, 렌더링 네 단계를 처리한 뒤 유튜브·틱톡·인스타그램에 자동 발행하고, 성과를 수집해 다음 주제 선정에 반영합니다. 사람은 주제 판단과 최종 검수를 맡습니다.</desc>
-
-      <rect class="bxh" x="128" y="0" width="172" height="26" rx="13"/>
-      <text class="kh" x="214" y="17" text-anchor="middle">사람 · 주제 판단</text>
-      <path class="lnd" d="M214 26 V 62"/>
-
-      <rect class="bxh" x="600" y="0" width="172" height="26" rx="13"/>
-      <text class="kh" x="686" y="17" text-anchor="middle">사람 · 최종 검수</text>
-      <path class="lnd" d="M686 26 V 62"/>
-
-      <rect class="bx" x="0" y="62" width="130" height="98" rx="12"/>
-      <text class="t" x="65" y="100" text-anchor="middle">검색 수요</text>
-      <text class="s" x="65" y="122" text-anchor="middle">네이버 API</text>
-      <path class="ln" d="M136 111 H 162"/><path class="ar" d="M162 105 l12 6 -12 6 z"/>
-
-      <rect class="bxa" x="182" y="62" width="516" height="98" rx="12"/>
-      <text class="k" x="196" y="82">AI 에이전트</text>
-      <g class="cell">
-        <rect class="bx" x="196" y="92" width="240" height="26" rx="7"/>
-        <text class="c" x="208" y="109">1 주제 · 대본<tspan class="cm" dx="8">Claude API</tspan></text>
-        <rect class="bx" x="444" y="92" width="240" height="26" rx="7"/>
-        <text class="c" x="456" y="109">2 나레이션 · 자막<tspan class="cm" dx="8">ElevenLabs</tspan></text>
-        <rect class="bx" x="196" y="124" width="240" height="26" rx="7"/>
-        <text class="c" x="208" y="141">3 이미지 · 영상<tspan class="cm" dx="8">생성 모델 API</tspan></text>
-        <rect class="bx" x="444" y="124" width="240" height="26" rx="7"/>
-        <text class="c" x="456" y="141">4 렌더링 · 조립<tspan class="cm" dx="8">FFmpeg</tspan></text>
-      </g>
-
-      <path class="ln" d="M704 111 H 730"/><path class="ar" d="M730 105 l12 6 -12 6 z"/>
-      <rect class="bx" x="750" y="62" width="150" height="98" rx="12"/>
-      <text class="t" x="825" y="100" text-anchor="middle">자동 발행</text>
-      <text class="s" x="825" y="122" text-anchor="middle">유튜브 · 틱톡 · 인스타</text>
-
-      <path class="ln" d="M825 160 V 196 Q 825 208 813 208 H 77 Q 65 208 65 196 V 172"/>
-      <path class="ar" d="M59 172 l6 -12 6 12 z"/>
-      <rect class="bxs" x="330" y="196" width="240" height="24" rx="12"/>
-      <text class="s" x="450" y="212" text-anchor="middle">성과 수집 &rarr; 다음 주제에 반영</text>
-
-      <text class="s" x="450" y="252" text-anchor="middle">단계마다 상태를 기록해 멈춘 지점부터 다시 실행합니다</text>
-      <text class="s" x="450" y="274" text-anchor="middle">사람이 하는 건 어떤 주제를 버릴지 정하는 것과 최종 검수뿐입니다</text>
-    </svg>
-    <p class="datafoot">에이전트 구성과 운영 방식은 위 <strong>AI 파이프라인 상세</strong>에 정리했습니다.</p>
-  </div>
 </section>
 
 <footer>
