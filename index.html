@@ -283,6 +283,20 @@ figure{margin:0}
 }
 .pipe .fn{font-size:13px;letter-spacing:.22em;color:var(--violet-ink);margin-bottom:10px}
 .pipe p{margin:0;font-size:14.5px;color:var(--ink);max-width:52em;text-wrap:pretty}
+.pipesvg{width:100%;height:auto;display:block;margin:6px 0 2px;font-family:inherit}
+.pipesvg .bx{fill:var(--card);stroke:var(--line);stroke-width:1}
+.pipesvg .bxa{fill:var(--card);stroke:var(--violet);stroke-width:1.5;opacity:.55}
+.pipesvg .bxh{fill:var(--red-wash);stroke:none}
+.pipesvg .bxs{fill:var(--chip);stroke:none}
+.pipesvg .t{fill:var(--ink);font-size:15px;font-weight:700}
+.pipesvg .s{fill:var(--muted);font-size:12.5px}
+.pipesvg .c{fill:var(--ink);font-size:12.5px;font-weight:700}
+.pipesvg .cm{fill:var(--muted);font-weight:400}
+.pipesvg .k{fill:var(--violet-ink);font-size:11px;font-weight:700;letter-spacing:.1em}
+.pipesvg .kh{fill:var(--red-ink);font-size:11px;font-weight:700;letter-spacing:.04em}
+.pipesvg .ln{stroke:var(--muted);fill:none;stroke-width:1.4;opacity:.6}
+.pipesvg .lnd{stroke:var(--red);fill:none;stroke-width:1.2;stroke-dasharray:3 3;opacity:.75}
+.pipesvg .ar{fill:var(--muted);opacity:.75}
 .pipe .flow{
   display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center;
 }
@@ -709,14 +723,49 @@ footer .mail{font-size:16px}
   <div class="pipe">
     <div class="fn anton">HOW &mdash; AI CONTENT PIPELINE</div>
     <p>Claude Code &middot; API 연동으로 구축한 자동화 파이프라인이 아이디어 발굴부터 예약 업로드까지 처리합니다. 사람은 기획 판단과 품질 검수에만 집중해, 1인 운영으로 격일 발행을 유지했습니다.</p>
-    <div class="flow">
-      <span>키워드 수요 실측</span><span class="arr">&rarr;</span>
-      <span>대본 생성</span><span class="arr">&rarr;</span>
-      <span>이미지 &middot; 음성 &middot; 영상 제작</span><span class="arr">&rarr;</span>
-      <span>자막 &middot; 조립</span><span class="arr">&rarr;</span>
-      <span>예약 업로드</span><span class="arr">&rarr;</span>
-      <span>성과 수집 &middot; 리포트</span>
-    </div>
+    <svg class="pipesvg" viewBox="0 0 900 300" role="img" aria-labelledby="pt pd">
+      <title id="pt">AI 에이전트 파이프라인 구조도</title>
+      <desc id="pd">검색 수요 데이터를 입력받아 AI 에이전트가 주제·대본, 나레이션·자막, 이미지·영상, 렌더링 네 단계를 처리한 뒤 유튜브·틱톡·인스타그램에 자동 발행하고, 성과를 수집해 다음 주제 선정에 반영합니다. 사람은 주제 판단과 최종 검수를 맡습니다.</desc>
+
+      <rect class="bxh" x="128" y="0" width="172" height="26" rx="13"/>
+      <text class="kh" x="214" y="17" text-anchor="middle">사람 · 주제 판단</text>
+      <path class="lnd" d="M214 26 V 62"/>
+
+      <rect class="bxh" x="600" y="0" width="172" height="26" rx="13"/>
+      <text class="kh" x="686" y="17" text-anchor="middle">사람 · 최종 검수</text>
+      <path class="lnd" d="M686 26 V 62"/>
+
+      <rect class="bx" x="0" y="62" width="130" height="98" rx="12"/>
+      <text class="t" x="65" y="100" text-anchor="middle">검색 수요</text>
+      <text class="s" x="65" y="122" text-anchor="middle">네이버 API</text>
+      <path class="ln" d="M136 111 H 162"/><path class="ar" d="M162 105 l12 6 -12 6 z"/>
+
+      <rect class="bxa" x="182" y="62" width="516" height="98" rx="12"/>
+      <text class="k" x="196" y="82">AI 에이전트</text>
+      <g class="cell">
+        <rect class="bx" x="196" y="92" width="240" height="26" rx="7"/>
+        <text class="c" x="208" y="109">1 주제 · 대본<tspan class="cm" dx="8">Claude API</tspan></text>
+        <rect class="bx" x="444" y="92" width="240" height="26" rx="7"/>
+        <text class="c" x="456" y="109">2 나레이션 · 자막<tspan class="cm" dx="8">ElevenLabs</tspan></text>
+        <rect class="bx" x="196" y="124" width="240" height="26" rx="7"/>
+        <text class="c" x="208" y="141">3 이미지 · 영상<tspan class="cm" dx="8">생성 모델 API</tspan></text>
+        <rect class="bx" x="444" y="124" width="240" height="26" rx="7"/>
+        <text class="c" x="456" y="141">4 렌더링 · 조립<tspan class="cm" dx="8">FFmpeg</tspan></text>
+      </g>
+
+      <path class="ln" d="M704 111 H 730"/><path class="ar" d="M730 105 l12 6 -12 6 z"/>
+      <rect class="bx" x="750" y="62" width="150" height="98" rx="12"/>
+      <text class="t" x="825" y="100" text-anchor="middle">자동 발행</text>
+      <text class="s" x="825" y="122" text-anchor="middle">유튜브 · 틱톡 · 인스타</text>
+
+      <path class="ln" d="M825 160 V 196 Q 825 208 813 208 H 77 Q 65 208 65 196 V 172"/>
+      <path class="ar" d="M59 172 l6 -12 6 12 z"/>
+      <rect class="bxs" x="330" y="196" width="240" height="24" rx="12"/>
+      <text class="s" x="450" y="212" text-anchor="middle">성과 수집 &rarr; 다음 주제에 반영</text>
+
+      <text class="s" x="450" y="252" text-anchor="middle">단계마다 상태를 기록해 멈춘 지점부터 다시 실행합니다</text>
+      <text class="s" x="450" y="274" text-anchor="middle">사람이 하는 건 어떤 주제를 버릴지 정하는 것과 최종 검수뿐입니다</text>
+    </svg>
     <p class="datafoot">에이전트 구성과 운영 방식은 위 <strong>AI 파이프라인 상세</strong>에 정리했습니다.</p>
   </div>
 </section>
