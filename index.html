@@ -160,6 +160,14 @@ section{padding:64px 0 8px}
   display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
   gap:20px;
 }
+.vgroups{display:grid;gap:40px}
+.vgroup-head{
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding-top:16px;margin-bottom:16px;border-top:1px solid var(--line);
+}
+.vgroup-head h3{font-size:18px;margin:0;font-weight:800;letter-spacing:-.01em}
+.vgroup-head .n{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.vgroup-head .note{font-size:13px;color:var(--muted);flex-basis:100%}
 .vcard{grid-column:span 1}
 .vcard.wide{grid-column:span 2}
 .vc{
@@ -571,10 +579,10 @@ footer .mail{font-size:16px}
   <div class="shead">
     <div class="step"><span class="no anton">01</span><span class="fn anton r">REACH</span></div>
     <h2>노출을 만드는 영상 소재 <span class="count" id="vcount"></span></h2>
-    <p>브랜드 필름부터 후킹형 커머스 숏폼, 인플루언서 협업, 생성 AI 제작 콘텐츠까지. <strong>도달을 확보하는 단계</strong>의 소재입니다.</p>
+    <p>리빙·인테리어 숏폼, 브랜드 필름, 제품 광고, 협업·커머스 숏폼까지 <strong>목적별로 나눠</strong> 정리한 <strong>도달 단계</strong>의 소재입니다.</p>
   </div>
   <div class="res"><b>RESULT</b><div>제품 소개 &middot; 인플루언서 협업 &middot; 커머스 숏폼까지 <strong>목적에 따라 길이와 화법을 다르게</strong> 설계했습니다. <strong>AI 활용</strong> 표시가 붙은 카드는 <strong>생성 모델로 제작한 개인 작업물</strong>입니다.</div></div>
-  <div class="vgrid" id="vgrid"></div>
+  <div class="vgroups" id="vgroups"></div>
   <p class="hint"><span class="k">&#9654; 즉시 재생</span> 표시된 카드는 이 페이지 안에서 바로 재생되고, 나머지는 클릭 시 원본 영상이 새 탭에서 열립니다.</p>
 </section>
 
@@ -810,7 +818,12 @@ const VMETA = {
   video_15:{t:"새집처럼복원수리 숏폼 제안 샘플 Ⅰ — 집에 없는 낮, 샤워부스", r:"기획 · 제작", tag:"ai", d:"직접 제작한 3D + AI 샘플"},
   video_16:{t:"새집처럼복원수리 숏폼 제안 샘플 Ⅱ — 이사 나가기 전에", r:"기획 · 제작", tag:"ai", d:"직접 제작한 3D + AI 샘플"},
 };
-const VORDER = ["video_13","video_14","video_15","video_16","video_06","video_12","video_05","video_09","video_07","video_08","video_10","video_11"];
+const VGROUPS = [
+  {t:"리빙·인테리어 숏폼", note:"인테리어·수리 업체용 제안 샘플 · 3D + AI 직접 제작", keys:["video_13","video_14","video_15","video_16"]},
+  {t:"브랜드 필름", note:"브랜드 무드·해외 진출용 가로형 필름", keys:["video_06","video_12"]},
+  {t:"제품 소개·광고", note:"신제품 런칭 소개 · 모션그래픽 광고", keys:["video_05","video_09"]},
+  {t:"협업·커머스 숏폼", note:"인플루언서 협업 · 후킹형 출연 숏폼", keys:["video_07","video_08","video_10","video_11"]},
+];
 
 const PMETA = {
   page_00:{t:"펫키지 프리미엄 배변패드", pp:"상세페이지 20p", d:"국내생산 신뢰 소구 + 흡수력 실증 구성"},
@@ -851,8 +864,16 @@ const vmap = {}; DATA.videos.forEach(v=>vmap[v.key]=v);
 function fmtDur(s){ if(!s) return ""; const m=Math.floor(s/60); return m+":"+String(s%60).padStart(2,"0"); }
 
 /* 영상 카드 */
-const vgrid = $("#vgrid");
-VORDER.forEach(key=>{
+const vgroups = $("#vgroups");
+VGROUPS.forEach(g=>{
+const box = document.createElement("div");
+box.className = "vgroup";
+box.innerHTML = `<div class="vgroup-head"><h3>${g.t}</h3><span class="n">${g.keys.length}편</span><span class="note">${g.note}</span></div>`;
+const vgrid = document.createElement("div");
+vgrid.className = "vgrid";
+box.appendChild(vgrid);
+vgroups.appendChild(box);
+g.keys.forEach(key=>{
   const v = vmap[key]; if(!v) return;
   const m = VMETA[key];
   const cell = document.createElement("div");
@@ -889,6 +910,7 @@ VORDER.forEach(key=>{
   meta.innerHTML = `<h3>${m.t}</h3><div class="role">${m.r}</div><div class="desc">${m.d}</div>`;
   cell.appendChild(meta);
   vgrid.appendChild(cell);
+});
 });
 $("#vcount").textContent = DATA.videos.length + "편";
 
